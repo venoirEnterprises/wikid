@@ -29,4 +29,8 @@ export class HeroDetailComponent implements OnInit {
 	save(): void {
 		this.heroService.updateHero(this.selectedHero).subscribe(() => this.goBack());
 	}
+
+	delete(): void {
+		this.heroService.deleteHero(this.selectedHero).subscribe(() => this.goBack());
+	}
 }
