@@ -3,17 +3,39 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "wikid": {
+    "ng2auth": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:class": {
+          "spec": false
+        },
+        "@schematics/angular:component": {
+          "spec": false
+        },
+        "@schematics/angular:directive": {
+          "spec": false
+        },
+        "@schematics/angular:guard": {
+          "spec": false
+        },
+        "@schematics/angular:module": {
+          "spec": false
+        },
+        "@schematics/angular:pipe": {
+          "spec": false
+        },
+        "@schematics/angular:service": {
+          "spec": false
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/wikid",
+            "outputPath": "dist/ng2auth",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -50,18 +72,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "wikid:build"
+            "browserTarget": "ng2auth:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "wikid:build:production"
+              "browserTarget": "ng2auth:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "wikid:build"
+            "browserTarget": "ng2auth:build"
           }
         },
         "test": {
@@ -95,7 +117,7 @@
         }
       }
     },
-    "wikid-e2e": {
+    "ng2auth-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -103,11 +125,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "wikid:serve"
+            "devServerTarget": "ng2auth:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "wikid:serve:production"
+              "devServerTarget": "ng2auth:serve:production"
             }
           }
         },
@@ -123,5 +145,5 @@
       }
     }
   },
-  "defaultProject": "wikid"
+  "defaultProject": "ng2auth"
 }
